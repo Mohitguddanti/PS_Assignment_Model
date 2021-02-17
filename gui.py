@@ -9,7 +9,7 @@ status = True #connection status
 
 #User input for time interval of sending data
 time_interval =int( input("Enter the time interval for downloading data(in hrs){0 - 24}:"))
-
+cl_id = input("Enter the id of the user you want to connect to: ")
 #Waiting till connection is established
 def connection_check():
     while pg.locateOnScreen('Connecting.png', confidence = 0.7) is not None:
@@ -47,7 +47,7 @@ while status:
     #Locate the Id box, enter the ID and wait for connection to be established
     pg.moveTo(pg.locateCenterOnScreen('ID_box.png'))
     pg.click()
-    pg.write('605220544')
+    pg.write(cl_id)
     pg.moveTo(839, 342)
     pg.click()
     time.sleep(1)
